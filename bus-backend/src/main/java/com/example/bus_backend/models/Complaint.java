@@ -12,5 +12,15 @@ public class Complaint {
     private String message;
     private String response;
     private Instant date;
-    // getters & setters
+    
+    public String getComplaintID() { return complaintID; }
+public void setComplaintID(String complaintID) { this.complaintID = complaintID; }
+public String getUserID() { return userID; }
+public void setUserID(String userID) { this.userID = userID; }
+public String getMessage() { return message; }
+public void setMessage(String message) { this.message = message; }
+public String getResponse() { return response; }
+public void setResponse(String response) { this.response = response; }
+public Instant getDate() { return date; }
+public void setDate(Instant date) { this.date = date; }
 }

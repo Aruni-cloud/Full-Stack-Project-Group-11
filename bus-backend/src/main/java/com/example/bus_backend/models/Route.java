@@ -11,6 +11,18 @@ public class Route {
     private String endLocation;
     private double distance;
     private double duration;
-    // optionally list of schedule IDs or schedules inline
-    // getters & setters
-}
+    
+     public String getRouteId() { return routeId; }
+    public void setRouteId(String routeId) { this.routeId = routeId; }
+
+    public String getStartLocation() { return startLocation; }
+    public void setStartLocation(String startLocation) { this.startLocation = startLocation; }
+
+    public String getEndLocation() { return endLocation; }
+    public void setEndLocation(String endLocation) { this.endLocation = endLocation; }
+
+    public double getDistance() { return distance; }
+    public void setDistance(double distance) { this.distance = distance; }
+
+    public double getDuration() { return duration; }
+    public void setDuration(double duration) { this.duration = duration; }}
