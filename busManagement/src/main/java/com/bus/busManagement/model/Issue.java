@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 public class Issue {
     @Id
     private String id;
-    private String type; // "VEHICLE" or "ROUTE"
+    private String type; 
     private String description;
     private String reportedByUserId;
     private LocalDateTime reportedAt;
