@@ -21,4 +21,3 @@ public class Trip {
     private String status; // "SCHEDULED", "IN_PROGRESS", "COMPLETED"
     private int passengerCount; 
 }
-12th
