@@ -1,13 +1,13 @@
-package com.bus.busManagement;
+package com.bus.system;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BusManagementApplication {
+public class BusSystemApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BusManagementApplication.class, args);
+		SpringApplication.run(BusSystemApplication.class, args);
 	}
 
 }
