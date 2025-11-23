@@ -13,7 +13,11 @@ public class User {
     
     @Indexed(unique = true)
     private String username;
-    private String password; // In production, encrypt this!
+    
+    @Indexed(unique = true) // Good practice to ensure unique emails
+    private String email;   // <--- ADDED THIS BACK
+    
+    private String password;
     private String role;     // "DRIVER" or "CONDUCTOR"
     private String fullName;
 }
