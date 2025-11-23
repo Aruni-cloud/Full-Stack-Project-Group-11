@@ -1,5 +1,12 @@
-package com.bus.busManagement.repository;
+package com.bus.system.repository;
 
-public class BusRepository {
-    
+import com.bus.system.model.Bus;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+import java.util.List;
+
+@Repository
+public interface BusRepository extends MongoRepository<Bus, String> {
+    List<Bus> findByDriverId(String driverId);
+    List<Bus> findByConductorId(String conductorId);
 }
