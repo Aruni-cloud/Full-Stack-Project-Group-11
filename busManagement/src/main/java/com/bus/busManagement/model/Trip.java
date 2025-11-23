@@ -14,9 +14,11 @@ public class Trip {
     private String routeName;
     private String startLocation;
     private String endLocation;
-    private LocalDateTime startTime;
-    private String status; // "SCHEDULED", "IN_PROGRESS", "COMPLETED"
     
-    // Conductor updates these
+    // Renamed 'startTime' to 'scheduleTime' to match previous Service logic
+    private LocalDateTime scheduleTime; 
+    
+    private String status; // "SCHEDULED", "IN_PROGRESS", "COMPLETED"
     private int passengerCount; 
 }
+12th
