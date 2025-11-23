@@ -1,5 +1,5 @@
 
-package com.example.bus_backend.services;
+/* package com.example.bus_backend.services;
 
 import org.springframework.stereotype.Service;
 import com.example.bus_backend.repositories.UserRepository;
@@ -27,3 +27,4 @@ public class AuthService {
 
     // login will be handled by AuthController using JWT utilities
 }
+*/

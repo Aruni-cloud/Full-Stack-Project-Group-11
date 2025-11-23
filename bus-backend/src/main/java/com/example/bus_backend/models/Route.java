@@ -25,4 +25,5 @@ public class Route {
     public void setDistance(double distance) { this.distance = distance; }
 
     public double getDuration() { return duration; }
-    public void setDuration(double duration) { this.duration = duration; }}
+    public void setDuration(double duration) { this.duration = duration; }
+}

@@ -24,7 +24,7 @@ public class RouteService {
         return repo.findAll();
     }
 
-    public Optional<Route> getRoute(String id) {
+    public Optional<Route> getById(String id) {
         return repo.findById(id);
     }
 
@@ -33,9 +33,13 @@ public class RouteService {
 
         r.setStartLocation(updated.getStartLocation());
         r.setEndLocation(updated.getEndLocation());
-        r.setDistance(((Object) updated).getDistance());
+        r.setDistance(updated.getDistance());
         r.setDuration(updated.getDuration());
 
         return repo.save(r);
+    }
+
+    public void delete(String id) {
+        repo.deleteById(id);
     }
 }
