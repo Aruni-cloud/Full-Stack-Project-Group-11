@@ -9,9 +9,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Bus {
     @Id
     private String id;
-    private String registrationNumber;
-    private String driverId;    // Assigned Driver
-    private String conductorId; // Assigned Conductor
-    private String routeName;   // Default route
+    
+    // Ensure your frontend uses "registrationNumber", not "regNumber"
+    private String registrationNumber; 
+    
+    private String driverId;
+    private String conductorId;
+    private String routeName;
 }
-
