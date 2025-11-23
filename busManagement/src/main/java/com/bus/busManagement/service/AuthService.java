@@ -11,9 +11,16 @@ public class AuthService {
     @Autowired private UserRepository userRepository;
 
     public User register(User user) {
+        // 1. Check Username
         if (userRepository.existsByUsername(user.getUsername())) {
-            throw new RuntimeException("Username already exists!");
+            throw new RuntimeException("Error: Username already exists!");
         }
+        
+        // 2. Check Email (Added this to match your Repository update)
+        if (userRepository.existsByEmail(user.getEmail())) {
+            throw new RuntimeException("Error: Email is already in use!");
+        }
+
         return userRepository.save(user);
     }
 
@@ -24,8 +31,10 @@ public class AuthService {
         if (!user.getPassword().equals(password)) {
             throw new RuntimeException("Invalid credentials");
         }
+        
         // Security measure: Clear password before returning to controller
         user.setPassword(null); 
         return user;
     }
 }
+
