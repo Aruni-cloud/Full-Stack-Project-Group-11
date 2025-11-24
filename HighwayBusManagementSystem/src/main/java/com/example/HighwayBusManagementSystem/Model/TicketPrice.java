@@ -11,6 +11,19 @@ public class TicketPrice {
     private String routeId;
     private double price;
 
-    // getters & setters
+
+        public String getId() {
+        return id;
+    }
+
+
+    public String getRouteId() {
+        return routeId;
+    }
+
+
+    public double getPrice() {
+        return price;
+    }
 }
 

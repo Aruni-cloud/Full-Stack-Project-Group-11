@@ -12,5 +12,24 @@ public class Announcement {
     private String message;
     private String date;
 
-    // getters & setters
+        public String getId() {
+        return id;
+    }
+
+
+    public String getTitle() {
+        return title;
+    }
+
+
+    public String getMessage() {
+        return message;
+    }
+
+
+
+    public String getDate() {
+        return date;
+    }
+
 }

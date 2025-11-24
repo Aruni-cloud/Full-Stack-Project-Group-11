@@ -27,7 +27,6 @@ public class Route {
     }
 
 
-
     public double getDistance() {
         return distance;
     }

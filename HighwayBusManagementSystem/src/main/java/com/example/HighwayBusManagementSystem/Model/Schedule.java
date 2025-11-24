@@ -13,5 +13,27 @@ public class Schedule {
     private String arrival;
     private String time;
 
-    // getters & setters
+        public String getId() {
+        return id;
+    }
+
+
+    public String getBusNo() {
+        return busNo;
+    }
+
+
+    public String getDeparture() {
+        return departure;
+    }
+
+
+    public String getArrival() {
+        return arrival;
+    }
+
+    public String getTime() {
+        return time;
+    }
+    
 }
