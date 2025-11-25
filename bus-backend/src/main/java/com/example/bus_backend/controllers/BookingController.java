@@ -4,19 +4,19 @@ import com.example.bus_backend.models.Booking;
 import com.example.bus_backend.services.BookingService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.config.Customizer;
-
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/bookings")
+@CrossOrigin("*")
 public class BookingController {
+
     private final BookingService service;
 
-    public BookingController(BookingService service) { this.service = service; }
+    public BookingController(BookingService service) {
+        this.service = service;
+    }
 
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody Booking b) {
@@ -28,6 +28,11 @@ public class BookingController {
         }
     }
 
+    @GetMapping
+    public List<Booking> getAll() {
+        return service.getAllBookings();
+    }
+
     @GetMapping("/passenger/{passengerId}")
     public ResponseEntity<List<Booking>> getByPassenger(@PathVariable String passengerId) {
         return ResponseEntity.ok(service.getBookingsByPassenger(passengerId));
@@ -35,7 +40,9 @@ public class BookingController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getBooking(@PathVariable String id) {
-        return service.getBooking(id).map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        return service.getBooking(id)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PutMapping("/{id}/cancel")
@@ -48,9 +55,16 @@ public class BookingController {
         return ResponseEntity.ok(service.modifyBooking(id, modified));
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteBooking(@PathVariable String id) {
+        service.deleteBooking(id);
+        return ResponseEntity.ok("Booking deleted: " + id);
+    }
+
     @GetMapping("/{id}/print")
     public ResponseEntity<?> printTicket(@PathVariable String id) {
-        return service.getBooking(id).map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        return service.getBooking(id)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 }
-
