@@ -35,5 +35,12 @@ public class PublicUserController {
     public List<TicketPrice> getTicketPrices() {
         return publicUserService.viewTicketPrices();
     }
-}
 
+    @GetMapping("/schedules/search")
+    public List<Schedule> getSchedulesByRoute(
+            @RequestParam String departure,
+            @RequestParam String arrival) {
+        return publicUserService.viewSchedulesByRoute(departure, arrival);
+    }
+
+}

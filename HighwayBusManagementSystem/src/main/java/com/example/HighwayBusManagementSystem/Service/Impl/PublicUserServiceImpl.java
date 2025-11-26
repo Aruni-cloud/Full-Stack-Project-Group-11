@@ -1,6 +1,5 @@
 package com.example.HighwayBusManagementSystem.Service.Impl;
 
-
 import com.example.HighwayBusManagementSystem.Model.*;
 import com.example.HighwayBusManagementSystem.Repository.*;
 import org.springframework.stereotype.Service;
@@ -19,8 +18,7 @@ public class PublicUserServiceImpl implements PublicUserService {
             AnnouncementRepository announcementRepo,
             ScheduleRepository scheduleRepo,
             RouteRepository routeRepo,
-            TicketPriceRepository priceRepo
-    ) {
+            TicketPriceRepository priceRepo) {
         this.announcementRepo = announcementRepo;
         this.scheduleRepo = scheduleRepo;
         this.routeRepo = routeRepo;
@@ -46,4 +44,10 @@ public class PublicUserServiceImpl implements PublicUserService {
     public List<TicketPrice> viewTicketPrices() {
         return priceRepo.findAll();
     }
+    @Override
+    public List<Schedule> viewSchedulesByRoute(String departure, String arrival) {
+                return scheduleRepo.findByDepartureAndArrival(departure, arrival);
+    }
+    
+
 }

@@ -12,4 +12,7 @@ public interface PublicUserService {
     List<Route> viewRoutes();
 
     List<TicketPrice> viewTicketPrices();
+
+    public List<Schedule> viewSchedulesByRoute(String departure, String arrival);
+
 }
