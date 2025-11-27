@@ -9,14 +9,17 @@ import java.util.UUID;
 
 @Service
 public class PaymentService {
+
     private final PaymentRepository repo;
 
-    public PaymentService(PaymentRepository repo) { this.repo = repo; }
+    public PaymentService(PaymentRepository repo) {
+        this.repo = repo;
+    }
 
     public Payment processPayment(Payment p) {
         p.setPaymentID(UUID.randomUUID().toString());
         p.setPaymentDate(Instant.now());
-        p.setStatus("PAID"); // simulate immediate success
+        p.setStatus("PAID");
         return repo.save(p);
     }
 
@@ -30,4 +33,3 @@ public class PaymentService {
         return repo.save(p);
     }
 }
-

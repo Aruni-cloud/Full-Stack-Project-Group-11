@@ -10,9 +10,12 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/passengers")
 public class PassengerController {
+
     private final PassengerService service;
 
-    public PassengerController(PassengerService service) { this.service = service; }
+    public PassengerController(PassengerService service) {
+        this.service = service;
+    }
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody Passenger p) {
@@ -26,8 +29,12 @@ public class PassengerController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Passenger req) {
         Passenger p = service.findByEmail(req.getEmail());
-        if (p == null) return ResponseEntity.status(404).body("user not found");
-        if (!p.getPassword().equals(req.getPassword())) return ResponseEntity.status(401).body("invalid credentials");
+        if (p == null)
+            return ResponseEntity.status(404).body("user not found");
+
+        if (!p.getPassword().equals(req.getPassword()))
+            return ResponseEntity.status(401).body("invalid credentials");
+
         return ResponseEntity.ok(p);
     }
 

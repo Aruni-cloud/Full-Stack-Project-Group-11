@@ -45,6 +45,19 @@ public class PaymentController {
         return "Payment deleted: " + id;
     }
 
+    @PutMapping("/{id}")
+public Payment updatePayment(@PathVariable String id, @RequestBody Payment updated) {
+
+    Payment existing = repo.findById(id).orElseThrow();
+
+    existing.setAmount(updated.getAmount());
+    existing.setPaymentMethod(updated.getPaymentMethod());
+    existing.setOtp(updated.getOtp());
+    existing.setStatus(updated.getStatus());
+
+    return repo.save(existing);
+}
+
     // Verify OTP (POST)
     @PostMapping("/{id}/verify")
     public Payment verifyOtp(@PathVariable String id, @RequestParam String otp) {
