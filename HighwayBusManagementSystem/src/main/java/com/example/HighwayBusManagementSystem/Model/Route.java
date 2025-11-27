@@ -2,6 +2,7 @@ package com.example.HighwayBusManagementSystem.Model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import lombok.*;
 
 @Document(collection = "routes")
 public class Route {
