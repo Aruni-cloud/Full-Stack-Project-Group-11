@@ -1,5 +1,6 @@
 package com.example.HighwayBusManagementSystem.Repository;
 
-public interface DriverRepository {
+import com.example.HighwayBusManagementSystem.Model.Driver;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-}
+public interface DriverRepository extends MongoRepository<Driver, String> {}
