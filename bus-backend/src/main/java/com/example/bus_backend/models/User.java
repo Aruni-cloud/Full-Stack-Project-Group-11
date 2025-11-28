@@ -1,4 +1,4 @@
-package com.example.bus_backend.models;
+/* package com.example.bus_backend.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -73,4 +73,4 @@ public class User {
     public void setCreatedAt(Instant createdAt) {
         this.createdAt = createdAt;
     }
-}
+}  */

@@ -29,15 +29,24 @@ public class RouteService {
     }
 
     public Route updateRoute(String id, Route updated) {
-        Route r = repo.findById(id).orElseThrow();
+    Route r = repo.findById(id)
+            .orElseThrow(() -> new RuntimeException("Route not found"));
 
+    if (updated.getStartLocation() != null)
         r.setStartLocation(updated.getStartLocation());
+
+    if (updated.getEndLocation() != null)
         r.setEndLocation(updated.getEndLocation());
+
+    if (updated.getDistance() != 0)
         r.setDistance(updated.getDistance());
+
+    if (updated.getDuration() != 0)
         r.setDuration(updated.getDuration());
 
-        return repo.save(r);
-    }
+    return repo.save(r);
+}
+
 
     public void delete(String id) {
         repo.deleteById(id);

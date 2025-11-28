@@ -9,16 +9,33 @@ import java.util.List;
 
 @Service
 public class ComplaintService {
+
     private final ComplaintRepository repo;
 
-    public ComplaintService(ComplaintRepository repo) { this.repo = repo; }
+    public ComplaintService(ComplaintRepository repo) {
+        this.repo = repo;
+    }
 
     public Complaint submit(Complaint c) {
         c.setDate(Instant.now());
         return repo.save(c);
     }
 
+    public List<Complaint> getAll() {
+        return repo.findAll();
+    }
+
+    public void delete(String id) {
+        repo.deleteById(id);
+    }
+
+    public Complaint updateResponse(String id, String response) {
+        Complaint c = repo.findById(id).orElseThrow();
+        c.setResponse(response);
+        return repo.save(c);
+    }
+
     public List<Complaint> findByUser(String userId) {
-        return repo.findByUserID(userId);
+        return repo.findByUserId(userId);  // ✅ FIXED
     }
 }
