@@ -16,8 +16,8 @@ public class AdminAuthServiceImpl implements AdminAuthService {
     private final PasswordEncoder passwordEncoder;
 
     public AdminAuthServiceImpl(AdminRepository adminRepository,
-                                JwtUtil jwtUtil,
-                                PasswordEncoder passwordEncoder) {
+            JwtUtil jwtUtil,
+            PasswordEncoder passwordEncoder) {
         this.adminRepository = adminRepository;
         this.jwtUtil = jwtUtil;
         this.passwordEncoder = passwordEncoder;
@@ -38,6 +38,6 @@ public class AdminAuthServiceImpl implements AdminAuthService {
             return "Invalid username or password!";
         }
 
-        return jwtUtil.generateToken(username);
+        return jwtUtil.generateToken(username, admin.getRole());
     }
 }
