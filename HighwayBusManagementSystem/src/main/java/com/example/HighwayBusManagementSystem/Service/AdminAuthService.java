@@ -1,5 +1,9 @@
 package com.example.HighwayBusManagementSystem.Service;
 
-public interface AdminAuthService {
+import com.example.HighwayBusManagementSystem.Model.Admin;
 
+public interface AdminAuthService {
+    String register(Admin admin);
+    String login(String username, String password);
+    
 }
