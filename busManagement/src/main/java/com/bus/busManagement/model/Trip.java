@@ -1,4 +1,4 @@
-package com.bus.system.model;
+package com.bus.busManagement.model;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

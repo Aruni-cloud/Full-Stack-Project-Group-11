@@ -1,7 +1,7 @@
-package com.bus.system.service;
+package com.bus.busManagement.service;
 
-import com.bus.system.model.*;
-import com.bus.system.repository.*;
+import com.bus.busManagement.model.*;
+import com.bus.busManagement.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;

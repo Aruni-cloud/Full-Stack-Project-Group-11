@@ -1,7 +1,7 @@
-package com.bus.system.controller;
+package com.bus.busManagement.controller;
 
-import com.bus.system.model.User;
-import com.bus.system.service.AuthService;
+import com.bus.busManagement.model.User;
+import com.bus.busManagement.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

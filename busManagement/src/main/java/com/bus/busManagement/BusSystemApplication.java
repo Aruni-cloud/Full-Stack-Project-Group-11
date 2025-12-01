@@ -1,4 +1,4 @@
-package com.bus.system;
+package com.bus.busManagement;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

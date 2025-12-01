@@ -1,7 +1,7 @@
 
-package com.bus.system.repository;
+package com.bus.busManagement.repository;
 
-import com.bus.system.model.Trip;
+import com.bus.busManagement.model.Trip;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.bus.system.repository;
+package com.bus.busManagement.repository;
 
-import com.bus.system.model.Issue;
+import com.bus.busManagement.model.Issue;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

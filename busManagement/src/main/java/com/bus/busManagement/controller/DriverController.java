@@ -1,8 +1,8 @@
-package com.bus.system.controller;
+package com.bus.busManagement.controller;
 
-import com.bus.system.model.Bus;
-import com.bus.system.model.Trip;
-import com.bus.system.service.DriverService;
+import com.bus.busManagement.model.Bus;
+import com.bus.busManagement.model.Trip;
+import com.bus.busManagement.service.DriverService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

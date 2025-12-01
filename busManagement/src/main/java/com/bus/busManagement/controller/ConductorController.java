@@ -1,7 +1,7 @@
-package com.bus.system.controller;
+package com.bus.busManagement.controller;
 
-import com.bus.system.model.*;
-import com.bus.system.service.ConductorService;
+import com.bus.busManagement.model.*;
+import com.bus.busManagement.service.ConductorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

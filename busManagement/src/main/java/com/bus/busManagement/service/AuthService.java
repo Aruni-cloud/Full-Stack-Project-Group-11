@@ -1,7 +1,7 @@
-package com.bus.system.service;
+package com.bus.busManagement.service;
 
-import com.bus.system.model.User;
-import com.bus.system.repository.UserRepository;
+import com.bus.busManagement.model.User;
+import com.bus.busManagement.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
