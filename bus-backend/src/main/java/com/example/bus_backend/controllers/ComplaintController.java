@@ -39,10 +39,12 @@ public class ComplaintController {
     }
 
     @PutMapping("/{id}/response")
-    public ResponseEntity<Complaint> update(
-            @PathVariable String id,
-            @RequestBody String response
-    ) {
-        return ResponseEntity.ok(service.updateResponse(id, response));
-    }
+public ResponseEntity<Complaint> update(
+        @PathVariable String id,
+        @RequestBody String response
+) {
+    return ResponseEntity.ok(service.updateResponse(id, response));
+}
+
+
 }

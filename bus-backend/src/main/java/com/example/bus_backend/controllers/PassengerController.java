@@ -29,18 +29,21 @@ public class PassengerController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Passenger req) {
         Passenger p = service.findByEmail(req.getEmail());
-        if (p == null)
-            return ResponseEntity.status(404).body("user not found");
-
+        if (p == null) return ResponseEntity.status(404).body("user not found");
         if (!p.getPassword().equals(req.getPassword()))
             return ResponseEntity.status(401).body("invalid credentials");
-
         return ResponseEntity.ok(p);
+    }
+
+    @GetMapping
+    public ResponseEntity<?> getAll() {
+        return ResponseEntity.ok(service.findAll());
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getById(@PathVariable String id) {
-        Optional<Passenger> p = service.findById(id);
-        return p.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        return service.findById(id)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 }

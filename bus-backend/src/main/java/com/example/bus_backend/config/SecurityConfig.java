@@ -12,15 +12,18 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-
-        System.out.println(">>> SecurityConfig Loaded");
-
         http
-            .csrf(csrf -> csrf.disable())
+            .csrf(csrf -> csrf.disable())  // disable CSRF for API testing
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/passengers/register").permitAll()
-                .requestMatchers("/api/passengers/login").permitAll()
-                .anyRequest().permitAll()
+                .requestMatchers("/api/passengers/**").permitAll()   // allow passenger APIs
+                .requestMatchers("/api/bookings/**").permitAll()     // allow booking APIs
+                .requestMatchers("/api/complaints/**").permitAll()   // allow complaint APIs
+                .requestMatchers("/api/feedback/**").permitAll()
+                .requestMatchers("/api/payments/**").permitAll() 
+                .requestMatchers("/api/routes/**").permitAll()
+                .requestMatchers("/api/schedules/**").permitAll()
+                
+                .anyRequest().authenticated()                        // everything else requires login
             )
             .httpBasic(basic -> basic.disable());
 
