@@ -1,5 +1,18 @@
 package com.example.bus_backend.services;
 
-public class PublicUserService {
+import com.example.bus_backend.models.*;
+import java.util.List;
+
+public interface PublicUserService {
+
+    List<Announcement> viewAnnouncements();
+
+    List<Schedule> viewSchedules();
+
+    List<Route> viewRoutes();
+
+    List<TicketPrice> viewTicketPrices();
+
+    public List<Schedule> viewSchedulesByRoute(String departure, String arrival);
 
 }

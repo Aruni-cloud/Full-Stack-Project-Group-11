@@ -1,5 +1,10 @@
 package com.example.bus_backend.services;
 
-public class AdminAuthService {
+import com.example.bus_backend.models.Admin;
+
+public interface AdminAuthService {
+    String register(Admin admin);
+
+    String login(String username, String password);
 
 }

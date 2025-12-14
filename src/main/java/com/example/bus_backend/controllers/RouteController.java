@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.bus_backend.models.Route;
 import com.example.bus_backend.repositories.RouteRepository;
-import com.example.bus_backend.Service.AdminService;
+import com.example.bus_backend.services.AdminService;
 
 @RestController
 @RequestMapping("/api/routes")
@@ -55,7 +55,7 @@ public class RouteController {
         }
 
         Route e = existing.get();
-        e.setStart(route.getStart());
+        e.setStartLocation(route.getStartLocation());
         e.setEnd(route.getEnd());
         e.setDistance(route.getDistance());
 

@@ -1,12 +1,12 @@
-package com.example.bus_backend.Controller;
+package com.example.bus_backend.controllers;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.bus_backend.Model.Admin;
-import com.example.bus_backend.Service.AdminAuthService;
+import com.example.bus_backend.models.Admin;
+import com.example.bus_backend.services.AdminAuthService;
 
 @RestController
 @RequestMapping("/api/admin/auth")
