@@ -1,4 +1,4 @@
-package com.example.bus_backend.Controller;
+package com.example.bus_backend.controllers;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.bus_backend.Model.Route;
-import com.example.bus_backend.Repository.RouteRepository;
+import com.example.bus_backend.models.Route;
+import com.example.bus_backend.repositories.RouteRepository;
 import com.example.bus_backend.Service.AdminService;
 
 @RestController

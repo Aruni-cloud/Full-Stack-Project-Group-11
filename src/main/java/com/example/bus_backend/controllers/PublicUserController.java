@@ -1,7 +1,7 @@
-package com.example.bus_backend.Controller;
+package com.example.bus_backend.controllers;
 
-import com.example.bus_backend.Model.*;
-import com.example.bus_backend.Service.PublicUserService;
+import com.example.bus_backend.models.*;
+import com.example.bus_backend.services.PublicUserService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
